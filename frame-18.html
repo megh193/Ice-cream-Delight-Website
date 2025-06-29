@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/frame-18.css') }}" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Grandstander:wght@400;500;700&display=swap"/>
+    <script>
+      window.onload = function() {
+        var baseUrl = "{{ url_for('static', filename='') }}";
+        var image = document.querySelector('img[src="' + baseUrl + 'img/1.png"]');
+        var images = [
+          "1.png",
+          "2.png",
+          "3.png",
+          "4.png",
+          "5.png"
+        ];
+        var imageIndex = images.indexOf(image.getAttribute('src').split('/').pop());
+    
+        // Set data attribute for image URLs
+        image.setAttribute('data-images', JSON.stringify(images));
+    
+        image.addEventListener('click', function() {
+          var images = JSON.parse(image.getAttribute('data-images'));
+          imageIndex = (imageIndex + 1) % images.length;
+          // Change the source of the clicked image
+          image.src = baseUrl + 'img/' + images[imageIndex];
+        });
+      };
+    </script>
+    
+  </head>
+  <body>
+    <div class="project">
+      <div class="div2">
+        <img
+          class="untitled-design-29-14"
+          alt=""
+          src="{{ url_for('static', filename='img/bg.png') }}"
+        />
+
+        <div class="child2"></div>
+        <div class="child3"></div>
+        <div class="child4"></div>
+        <div class="child5"></div>
+        <div class="frame-parent2">
+          <div class="frame-parent3">
+            <div class="grab-the-best-ice-cream-parent2">
+              <b class="grab-the-best-container1">
+                <p class="grab-the-best4">Grab The Best</p>
+                <p class="ice-cream1">Ice Cream 🍦🍦</p>
+              </b>
+              <div class="lorem-ipsum-dolor1">
+                Lorem ipsum dolor sit amet consectetur. Augue nibh ullamcorper
+                gravida placerat ut. Donec ac egestas
+              </div>
+            </div>
+            <div class="learn-more-frame">
+              <div class="explore-more">Learn More</div>
+            </div>
+          </div>
+          <img class="frame-child4" alt=""  src="{{ url_for('static', filename='img/1.png') }}" />
+        </div>
+        <div class="nav-bar">
+          <div class="home-parent">
+            <div class="home2">Home</div>
+            <a class="home2" id="a" href="#abc">about us</a>
+            <a class="home2" href="#xyz">Products</a>
+          </div>
+          <img class="salford-2-21" alt="" src="{{ url_for('static', filename='img/logo.png') }}" />
+
+          <div class="flavors-parent">
+            <a class="home2" href="#pqr">Flavors</a>
+            <a class="home2" href="#con">Contact Us</a>
+            <div class="login-container">
+              <a href="{{ url_for('user_login') }}" class="explore-more">Login</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="div3">
+        <div class="child6"></div>
+        <div class="child7"></div>
+        <div class="child8"></div>
+        <div class="child9"></div>
+        <img
+          class="untitled-design-6-11"
+          alt=""
+          src="{{ url_for('static', filename='img/img1.png') }}"
+        />
+
+        <b class="we-care-about1">We Care About You!</b>
+        <img
+          class="untitled-design-7-11"
+          alt=""
+          src="{{ url_for('static', filename='img/img2.png') }}"
+        />
+
+        <div class="lorem-ipsum-dolor2">
+          Lorem ipsum dolor sit amet consectetur. Gravida sem tellus sed magna
+          commodo. Auctor vel congue ornare tempus nibh ac ipsum turpis sit.
+          Nunc venenatis quam viverra lobortis tortor.
+        </div>
+        <div class="lorem-ipsum-dolor3">
+          Lorem ipsum dolor sit amet consectetur. Gravida sem tellus sed magna
+          commodo. Auctor vel congue ornare tempus nibh ac ipsum turpis sit.
+          Nunc venenatis quam viverra lobortis tortor
+        </div>
+        <div class="frame-parent4">
+          <div class="explore-more-wrapper">
+            <div class="explore-more">Explore More</div>
+          </div>
+          <div class="buy-now-wrapper">
+            <div class="explore-more">Buy Now</div>
+          </div>
+        </div>
+      </div>
+      <div class="div4">
+        <div class="child9"></div>
+        <b class="products-range1" id="xyz">Products Range</b>
+        <div class="frame-parent5">
+          <div class="ellipse-parent">
+            <div class="frame-child5"></div>
+            <div class="frame-child6"></div>
+            <div class="frame-child7"></div>
+            <div class="untitled-design-18-1-parent">
+              <img
+                class="untitled-design-18-11"
+                alt=""
+                src="{{ url_for('static', filename='img/img8.png') }}"
+              />
+
+              <b class="home2">Ice Creams</b>
+            </div>
+            <div class="lorem-ipsum-dolor4">
+              Lorem ipsum dolor sit amet a consectetur. Gravida sem no tellus
+              sed magna dolor kem sitcommodo.Gravida sem.....
+            </div>
+          </div>
+          <img
+            class="untitled-design-11-2"
+            alt=""
+            src="{{ url_for('static', filename='img/img5.png') }}"
+          />
+        </div>
+        <div class="frame-parent6">
+          <div class="ellipse-group">
+            <div class="frame-child5"></div>
+            <div class="frame-child6"></div>
+            <div class="frame-child7"></div>
+            <div class="untitled-design-21-1-parent">
+              <img
+                class="untitled-design-21-11"
+                alt=""
+                src="{{ url_for('static', filename='img/img6.png') }}"
+              />
+
+              <b class="home2">Cones</b>
+            </div>
+            <div class="lorem-ipsum-dolor4">
+              Lorem ipsum dolor sit amet a consectetur. Gravida sem no tellus
+              sed magna dolor kem sitcommodo.Gravida sem.....
+            </div>
+          </div>
+          <img
+            class="untitled-design-16-2"
+            alt=""
+            src="{{ url_for('static', filename='img/img3.png') }}"
+          />
+        </div>
+        <div class="frame-parent7">
+          <div class="ellipse-container">
+            <div class="frame-child5"></div>
+            <div class="frame-child6"></div>
+            <div class="frame-child7"></div>
+            <div class="untitled-design-19-1-parent">
+              <img
+                class="untitled-design-19-11"
+                alt=""
+                src="{{ url_for('static', filename='img/img7.png') }}"
+              />
+
+              <b class="home2">Juices</b>
+            </div>
+            <div class="lorem-ipsum-dolor4">
+              Lorem ipsum dolor sit amet a consectetur. Gravida sem no tellus
+              sed magna dolor kem sitcommodo.Gravida sem.....
+            </div>
+          </div>
+          <img
+            class="untitled-design-13-3"
+            alt=""
+            src="{{ url_for('static', filename='img/img4.png') }}"
+          />
+        </div>
+      </div>
+      <div class="div5">
+        <div class="child6"></div>
+        <div class="child7"></div>
+        <div class="child8"></div>
+        <div class="child9"></div>
+        <div class="untitled-design-27-1-parent">
+          <img
+            class="untitled-design-27-11"
+            alt=""
+            src="{{ url_for('static', filename='img/img9.png') }}"
+          />
+
+          <div class="frame-parent8">
+            <div class="heavenly-flavors-parent">
+              <b class="heavenly-flavors1" id="pqr">Heavenly Flavors 🍨 </b>
+              <div class="lorem-ipsum-dolor7">
+                Lorem ipsum dolor sit amet consectetur. Gravida sem tellus sed
+                magna commodo. Auctor vel congue ornare tempus nibh ac ipsum
+                turpis sit. Nunc venenatis quam viverra lobortis tortor.
+              </div>
+            </div>
+            <div class="frame-parent9">
+              <div class="explore-more-wrapper">
+                <div class="explore-more">Explore More</div>
+              </div>
+              <div class="buy-now-wrapper">
+                <div class="explore-more">Buy Now</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="div6" id="con">
+        <div class="child6"></div>
+        <div class="child7"></div>
+        <div class="child8"></div>
+        <div class="child9"></div>
+        <div class="salford-2-2-parent">
+          <img class="salford-2-22" alt="" src="{{ url_for('static', filename='img/img10.png') }}">
+
+          <img class="frame-child14" alt="" src="./public/vector-17.svg" />
+
+          <div class="explore-more">
+            <p class="grab-the-best4">Home</p>
+            <p class="grab-the-best4">&nbsp;</p>
+            <p class="grab-the-best4" id="abc">About Us</p>
+            <p class="grab-the-best4">&nbsp;</p>
+            <p class="grab-the-best4">Contact Us</p>
+            <p class="grab-the-best4">&nbsp;</p>
+            <a href="{{ url_for('admin_login') }}" class="grab-the-best4">Admin login</a>
+
+            
+          </div>
+          <img class="frame-child14" alt="" src="./public/vector-16.svg" / >
+
+          <div class="frame-parent10">
+            <div class="subscribe-newsletter-wrapper">
+              <div class="subscribe-newsletter1">Subscribe Newsletter</div>
+            </div>
+            <div class="subscribe-wrapper">
+              <a href="{{ url_for('register') }}">Register</a>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

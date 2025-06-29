@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Login</title>
+  
+    <link href="/static/css/admin_login.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <script>
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username.trim() == "") {
+                alert("Please enter a valid username.");
+                return false;
+            }
+
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(username)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            if (password.trim() == "") {
+                alert("Please enter a password.");
+                return false;
+            }
+
+            if (password.length < 8 || password.length > 12) {
+                alert("Password must be between 8-12 characters long.");
+                return false;
+            }
+
+            var passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,12}$/;
+            if (!passwordPattern.test(password)) {
+                alert("Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character.");
+                return false;
+            }
+        }
+    </script>
+    <div class="wrapper">
+        <div class="img">
+            <img src="/static/img/profile.png" alt="Profile Image" class="profile-image">
+        </div>
+        <form name="admin-login" action="/admin_login" method="post" onsubmit="return validateForm()">
+            <div class="input-box">
+                <input name="username" type="text" placeholder="Username" required id="username">
+                <i class='bx bx-user'></i>
+            </div>
+            <div class="input-box">
+                <input name="password" type="password" placeholder="Password" required id="password">
+                <i class='bx bx-lock'></i>
+            </div>
+            <div class="remember-forget">
+                <label><input type="checkbox" name="" id="">Remember me</label>
+                <a href="#">Forget Password</a>
+            </div>
+            <button class="btn" type="submit" value="submit" onsubmit="validateForm()">Login</button>
+        </form>
+    </div>
+</body>
+</html>
