@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "aos": "^2.3.4",
+    "mongodb": "^6.5.0"
+  }
+}
